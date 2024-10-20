@@ -10,7 +10,9 @@ You will require a purchased domain from cloudflare.The process to do so is avai
 Githubs used
 
 https://github.com/nightscout/AndroidAPS
+
 https://github.com/nightscout/cgm-remote-monitor
+
 https://github.com/mrikirill/SynologyDDNSCloudflareMultidomain - used to create an internal DDNS entry in the Synology NAS for cloudflare DDNS
 
 There is an alternate way where you use the internal NAS’s DDNS service which eliminates the need for cloudflare but also increases complexity as you will need to create certificates via lets encrypt, port forwarding in your NAS as well as to configure a reverse proxy and configure your web portal. All of which add’s unique challenges and this guide eliminates. Docs on how to do so are available online.  A good reference is here
