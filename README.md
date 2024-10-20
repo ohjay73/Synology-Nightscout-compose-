@@ -52,7 +52,9 @@ Items you must adjust;
 Once your YAML is adjusted to your liking open the Container Manager in DSM select project and click the create button. 
 
 Project Name : whatever descriptor you need to identify the project
+
 Path: click set path and select docker/Mongo/nightscout-mongodb
+
 Source: Create docker_compose.yaml
 
 Copy the above YAML into the project and click Next, Next and Done and the project will create. For this you do not need to create a web station config but if you were creating this for a fully in DSM built with its internal DDNS, and certificates you would need to configure webstation to work
@@ -108,7 +110,9 @@ Open Container station
 Under project create new project
 
 Project Name : whatever descriptor you need to identify the project
+
 Path: click set path and select docker/cloudflare
+
 Source: Create docker_compose.yaml
 
 Copy the above YAML into the project and click Next, Next and Done and the project will create.
@@ -120,9 +124,13 @@ In the zerotrust webpage you left earlier, if your cloudflared project ran corre
 Click next and you will now configure your routes. 
 
 Subdomain: you can select anything here but I chose nightscout
+
 Domain: your fully qualified domain from cloudflare
+
 Service Type: HTTP 
+
 URL: your direct internal path including port ie 192.1.1.50:1337
+
 If you entered everything correctly as this point you can type nightscout.yourdomain in a browser and your nightscout instance will show up
 
 You can now add your nightscout URL into AAPS and this will work for v1 and v3 with websockets
