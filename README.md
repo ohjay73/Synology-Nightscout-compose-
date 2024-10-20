@@ -40,85 +40,12 @@ I am using mongo 5.0 for this example which works with the 923+ but 4.4.18 works
 
 Please examine the ENABLE section where the environment tables are set to ensure you have what you require for options. 
 
+see example YAML in project list
+
 Items you must adjust;
 
      API_SECRET: PUTYOURSECRETHERE
      CUSTOM_TITLE: NAMEYOURSITEHERE
-
-
-
-
-version: '3.9'
-
-
-x-logging:
- default-logging
-
-
-services:
- mongo:
-   container_name: nightscout-mongodb
-   image: mongo:5.0
-   ports:
-     - '27017:27017'
-   restart: 'unless-stopped'
-   volumes:
-     - /volume1/docker/Mongo/nightscout-mongodb:/data/db:cached
- mongo-express:
-   image: mongo-express:latest
-   container_name: mongo-express
-   ports:
-     - '8081:8081'
-   restart: 'unless-stopped'
- nightscout:
-   image: nightscout/cgm-remote-monitor:latest_dev
-   container_name: nightscout
-   restart: 'unless-stopped'
-   depends_on:
-     - mongo
-   ports:
-     - '1337:1337'
-   environment:
-     ### Variables for the container
-     NODE_ENV: production
-     TZ: Etc/UTC
-     INSECURE_USE_HTTP: 'true'
-
-
-     ### Required variables
-     MONGO_CONNECTION: mongodb://mongo:27017/nightscout
-     API_SECRET: PUTYOURSECRETHERE
-          ### Features
-     ENABLE: careportal basal dbsize rawbg iob maker cob bwp cage iage sage boluscalc pushover treatmentnotify pump profile food openaps bage alexa speech cors Cors upbat override
-     DEVICESTATUS_ADVANCED: true
-     SHOW_FORECAST: openaps careportal dbsize pump
-     # Adapt settings to your needs.
-     # For all other settings, please refer to the Environment section of the README
-     # https://github.com/nightscout/cgm-remote-monitor#environment
-     DBSIZE_MAX: 10000
-     DISPLAY_UNITS: mmol/l
-     TIME_FORMAT: 24
-     CAGE_WARN: 70
-     CAGE_URGENT: 80
-     IAGE_WARN: 70
-     IAGE_URGENT: 80
-     SAGE_WARN: 234
-     SAGE_URGENT: 240
-     CUSTOM_TITLE: NAMEYOURSITEHERE
-     THEME: colors
-     ALARM_TIMEAGO_WARN: 'off'
-     ALARM_TIMEAGO_URGENT: 'off'
-     ALARM_HIGH: 'off'
-     ALARM_LOW: 'off'
-     ALARM_URGENT_HIGH: 'off'
-     ALARM_URGENT_LOW: 'off'
-     PUMP_ENABLE_ALERTS: true
-     PUMP_FIELDS: reservoir battery clock status device
-     PUMP_WARN_ON_SUSPEND: true
-     BG_TARGET_BOTTOM: 70
-     BG_TARGET_TOP: 180
-
-
 
 Once your YAML is adjusted to your liking open the Container Manager in DSM select project and click the create button. 
 
