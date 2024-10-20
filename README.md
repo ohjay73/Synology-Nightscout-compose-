@@ -32,6 +32,10 @@ In file station you need to create the base folders that your docker project wil
 
 In this case we are using /volume1/docker/Mongo/nightscout-mongodb. This folder path must be created in advance either by file station or if you prefer to create it all by command line. 
 
+You'll also need to create volume1/docker/cloudflare for the DDNS later
+
+volume1 will only show up when logging into the nas via commandline. In filestation you will create your directory structure under the docker top level.
+
 Docker compose YAML
 This YAML will create 3 containers;
 Mongodb
