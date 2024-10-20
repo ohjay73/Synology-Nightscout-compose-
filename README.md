@@ -42,7 +42,7 @@ I am using mongo 5.0 for this example which works with the 923+ but 4.4.18 works
 
 Please examine the ENABLE section where the environment tables are set to ensure you have what you require for options. 
 
-see example YAML in project list
+see example nightscout-mongodb-mongoexpress-defaultcompose.yaml in project list
 
 Items you must adjust;
 
