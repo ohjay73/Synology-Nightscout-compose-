@@ -15,7 +15,7 @@ https://github.com/nightscout/cgm-remote-monitor
 
 https://github.com/mrikirill/SynologyDDNSCloudflareMultidomain - used to create an internal DDNS entry in the Synology NAS for cloudflare DDNS
 
-There is an alternate way where you use the internal NAS’s DDNS service which eliminates the need for cloudflare but also increases complexity as you will need to create certificates via lets encrypt, port forwarding in your NAS as well as to configure a reverse proxy and configure your web portal. All of which add’s unique challenges and this guide eliminates. Docs on how to do so are available online.  A good reference is here https://github.com/ohjay73/Synology_NightScout_Easy
+There is an alternate way where you use the internal NAS’s DDNS service which eliminates the need for cloudflare but also increases complexity as you will need to create certificates via lets encrypt, port forwarding in your NAS as well as to configure a reverse proxy and configure your web portal. its also less secure. All of which add’s unique challenges and this guide eliminates. Docs on how to do so are available online.  A good reference is here https://github.com/ohjay73/Synology_NightScout_Easy
 
 You can also use this same process to expose any other app on your NAS including the login so you don’t have to use synology’s quickconnect option. 
 
